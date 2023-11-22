@@ -133,7 +133,7 @@ def hospital_form():
         
         col1, col2 = st.columns((1,1))
         with col1:
-            phone_val = st.number_input("Phone number (India):", min_value=999999999, max_value=999999999999, value=1111111111, step=1)
+            phone_val = st.number_input("Phone number (+91):", min_value=1000000000, max_value=9999999999, value=1111111111, step=1)
         with col2:
             email_val = st.text_input("Email Address:")
 
@@ -186,7 +186,7 @@ def pharmacist_form():
         
         col1, col2 = st.columns((1,1))
         with col1:
-            phone_val = st.number_input("Phone number (India):", min_value=999999999, max_value=999999999999, value=1111111111, step=1)
+            phone_val = st.number_input("Phone number (+91):", min_value=1000000000, max_value=9999999999, value=1111111111, step=1)
         with col2:
             email_val = st.text_input("Email Address:")
 
@@ -200,11 +200,9 @@ def pharmacist_form():
     
         drug_license_number_val = st.text_input("Drug Lisense Number:")
         
-        avg_order_value_monthly_val = st.selectbox("Average Monthly Order Value (INR):", aov_monthly_ranges)
-        
         submitted = st.form_submit_button("Submit")
         if submitted:
-            if name_val and phone_val and email_val and address_val and state_val and pincode_val and drug_license_number_val and avg_order_value_monthly_val:
+            if name_val and phone_val and email_val and address_val and state_val and pincode_val and drug_license_number_val:
                 try:
                     form_type = "pharmacist"
                     
@@ -216,7 +214,6 @@ def pharmacist_form():
                         "state": state_val,
                         "pincode": pincode_val,
                         "drug_license_number": drug_license_number_val,
-                        "avg_order_value_monthly": avg_order_value_monthly_val
                     }
                     
                     store_details(form_type, details)
