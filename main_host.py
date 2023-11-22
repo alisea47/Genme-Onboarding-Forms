@@ -83,7 +83,7 @@ def retailer_form():
         
         col1, col2 = st.columns((1,1))
         with col1:
-            phone_val = st.number_input("Phone number (India):", min_value=999999999, max_value=999999999999, value=1111111111, step=1)
+            phone_val = st.number_input("Phone number (+91):", min_value=1000000000, max_value=9999999999, value=1111111111, step=1)
         with col2:
             email_val = st.text_input("Email Address:")
 
