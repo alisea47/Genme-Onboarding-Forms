@@ -7,6 +7,7 @@ from firebase_admin import credentials, db
 import json
 
 DB_URL = st.secrets["DB_URL"]
+LOGO_PATH = "logo.jpeg"
 
 FIREBASE_JSON = {
     "type":st.secrets["FIREBASE_TYPE"],
@@ -22,7 +23,7 @@ FIREBASE_JSON = {
     "universe_domain": st.secrets["FIREBASE_UNIVERSE_DOMAIN"]
 }
 
-st.set_page_config(page_title="Genme", page_icon="Genme Original Img.png", layout="centered", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Genme", page_icon=LOGO_PATH, layout="centered", initial_sidebar_state="expanded")
 
 # Initialize Firebase Admin SDK
 @st.cache_resource
@@ -273,7 +274,7 @@ if __name__ == "__main__":
     initialize_firebase()
     loc_details = get_location_details()
 
-    st.sidebar.image("Genme-removebg-preview.png")
+    st.sidebar.image(LOGO_PATH)
     st.sidebar.title("Welcome to Genme")
     
     st.sidebar.subheader("Register with us as a Partner:")
