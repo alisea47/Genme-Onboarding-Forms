@@ -270,6 +270,52 @@ def pharmacist_form(loc_details):
                             st.error("All fields are mandatory. Please fill them.")
 
 #--------------------------------------------------------------------------------------------------------------------
+def privacy_policy():
+    st.title("Privacy Policy")
+    st.write("""Genme (Semika Technology) cares about your privacy with utmost attention.
+            Here, we talk about when, how and why do we collect user information. This includes personal as well as behavioral information. We also talk about how we use such information and the scenarios where we may disclose such information to others.
+            1. Profile Details
+            On Genme (Semika Technology).in, one can signup via email address, mobile number. During signup, user creates a unique password. Each user also fills personal details like official name, mobile number, email address, drug license number, GST number, shop address, preferences. Currently, nothing can be publicly viewed by others on Genme (Semika Technology).in or open internet.  We may email our users from time to time depending on the usage patterns and to send you updates. We don’t believe in sharing or selling database with any 3rd party organization. You define who we are and we care the most about your privacy.
+            2. Information Collection Practices
+            2.1. Types of Information Collected
+            (a) Traffic Data: We automatically track and collect the following categories of information when you visit our Site: (1) IP addresses; (2) domain servers; and (3) types of web browsers used to access the Site (collectively “Traffic Data”). Traffic Data is anonymous information that does not personally identify you but is helpful for marketing purposes or for improving your experience on the Site.
+            (b) Personal Information: In order for you to access our Services, including paid features that we offer via the Site, we require you to provide us with certain information that personally identifies you (“Personal Information”). Personal Information includes the following categories of information: (1) Contact Data (such as your name and e-mail address); (2) Financial Data (such as your credit card details); and (3) for Genme (Semika Technology) account registration using your social networking accounts, your social media account log-in information. If you communicate with us by e-mail, post messages to our blog, or otherwise communicate to use via social media, any information provided in such communication may be collected as Personal Information.
+            When you use or register for our Service or otherwise interact with us, we may collect the following information from our users that may, in certain circumstances, constitute personal data:
+            Username;
+            Password;
+            E-mail address;
+            Address;
+            Phone number;
+            Name;
+            Drug License No.;
+            GST No.;
+            Social media account log-in info, where applicable;
+            Billing and payment information;
+            Product and order information (optional information);
+            Client contacts and feedback (optional information);
+            Information concerning the use of the Service;
+            Information necessary for communications;
+            Permits and consents; and
+            Other data obtained under the user's consent.
+            (c) Cookies: Cookies are pieces of text that may be sent to and saved by your browser when you access our Site; your web browser stores these cookies in a way associated with each website you visit, and you can see your cookies through your browser settings. We use cookies to enable our servers to recognize your web browser and tell us how and when you use our Services. Our cookies do not, by themselves, contain information that personally identifies you, and we don’t combine the general information collected through cookies with other such information to tell us who you are. However, we do use cookies to identify that you have logged in and that your web browser has accessed aspects of the Services, and that we may associate that information the account you may have created for your use of the Services. This information, in turn, is something used to personalize your experience with the Services. Most web browsers have an option for turning off the cookie feature, which will prevent your browser from accepting new cookies, as well as (depending on the sophistication of your web browser software) allowing you to decide on acceptance of each new cookie in a variety of ways. Genme (Semika Technology) does not collect personally identifiable browsing information from users that exercise the “Do Not Track option on their browser(s). Please note that this Privacy Policy applies to our use of cookies only, and does not cover the use of cookies by third parties.
+            (d) Information Retention Policy: Personal Information will only be retained by company for as long as necessary to provide you with Services. Company’s billing options for non-free plans provide for periodic billing, and Company may retain your Financial Data for that purpose.
+            3. Our Use of Your Information
+            Any of the personal information we collect from you may be used in one of the following ways:
+            To process transactions - (your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the services requested)
+            To improve our website - (we continually strive to improve our website offerings based on the information and feedback we receive from you)
+            To improve customer service - (your information helps us to more effectively respond to your customer service requests and support needs)
+            To send periodic newsletters or other promotional emails may be sent to you from us. Users have the option to unsubscribe from the newsletter at any time and at their sole discretion.
+            Your personal information will not be used for any other purpose without your consent.
+            4. Our Disclosure of Your Information
+            We do not buy/sell, trade, or otherwise transfer to outside parties your personal information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.
+            We may also release your personal information when we believe the release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. However, non-personally identifiable visitor information or information that has been rendered anonymous may be provided to other parties for marketing, advertising, or other uses.
+            5. Payment and accounts information
+            Genme (Semika Technology) uses third party as our payment service provider of choice to process all payments. As a result, Genme (Semika Technology) is not responsible for the security of your related banking details. Genme (Semika Technology) does not retain any user banking information on any of our servers.
+            6. Updates and Changes to Policy
+            We encourage you to review this Privacy Policy regularly for any changes. If we materially change the ways in which we use and disclose personal data, we will update the Effective Date at the top of this page, and send a notification email to our registered users. Your continued use of the Service following any changes to this Privacy Policy constitutes your acceptance of any such changes.
+            """)
+
+#--------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     initialize_firebase()
     loc_details = get_location_details()
@@ -278,7 +324,7 @@ if __name__ == "__main__":
     st.sidebar.title("Welcome to Genme")
     
     st.sidebar.subheader("Register with us as a Partner:")
-    option = st.sidebar.radio("Select:", ("Retailer", "Hospital", "Pharmacist"))
+    option = st.sidebar.radio("Select:", ("Retailer", "Hospital", "Pharmacist", "Privacy Policy"))
 
     # Perform actions based on user selection
     if option == "Retailer":
@@ -286,4 +332,6 @@ if __name__ == "__main__":
     elif option == "Hospital":
         hospital_form(loc_details)
     elif option == "Pharmacist":
-        pharmacist_form(loc_details)  
+        pharmacist_form(loc_details)
+    elif option == "Privacy Policy":
+        
