@@ -334,4 +334,4 @@ if __name__ == "__main__":
     elif option == "Pharmacist":
         pharmacist_form(loc_details)
     elif option == "Privacy Policy":
-        
+        privacy_policy()
